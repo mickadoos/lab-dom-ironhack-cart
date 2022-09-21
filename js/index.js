@@ -4,6 +4,21 @@ function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
 
   //... your code goes here
+  const price = product.querySelector('.price span').innerHTML;
+  const quantity = product.querySelector('.quantity input').value;
+  const subtotal = Number(price) * Number(quantity);
+  product.querySelector('.subtotal span').innerHTML = subtotal;
+
+  return subtotal;
+  // const subtotal = product.querySelector('.subtotal span');
+  // console.log('price ', price);
+  // console.log('price type ', typeof price);
+  // console.log('quantity ', quantity);
+  // console.log('price quanitty ', typeof quantity);
+  
+  // subtotal.innerHTML = Number(price) * Number(quantity);
+  // console.log('total price', totalPrice);
+  // subtotal.innerHTML = totalPrice;  
 }
 
 function calculateAll() {
