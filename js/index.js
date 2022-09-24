@@ -63,6 +63,23 @@ function removeProduct(event) {
 
 function createProduct() {
   //... your code goes here
+  console.log("Creating product...");
+  const nameProduct = document.getElementById('new-product').value;
+  const numProduct = Number(document.getElementById('num-product').value);
+  console.log('name product: ', nameProduct);
+  console.log('num product: ', numProduct, typeof numProduct);
+  console.log('length ', nameProduct.length);
+  // console.log('name product: ', document.getElementById('new-product').value);
+  if(nameProduct.length > 0){
+    const anyProduct = document.querySelector('.product');
+    const tableProduct = document.getElementById('cart');
+    console.log('anyproduct: ', anyProduct);
+    console.log(tableProduct);
+    tableProduct.appendChild(anyProduct);
+    
+    //look for create object method in docu, createElement + appendChild??
+    //set atributes for the new object (tr, "product")
+  }
 }
 
 window.addEventListener('load', () => {
@@ -75,4 +92,5 @@ window.addEventListener('load', () => {
   removeButtons.forEach(element => {
     element.addEventListener('click', removeProduct);
   })
+  document.getElementById('create').addEventListener('click', createProduct);
 });
